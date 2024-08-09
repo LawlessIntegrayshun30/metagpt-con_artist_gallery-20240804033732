@@ -1,0 +1,23 @@
+
+sequenceDiagram
+    participant A as App
+    participant S as Server
+    participant G as Gallery
+    participant AD as ArtworkDetail
+    participant CF as CheckoutForm
+    participant AG as ArtGenerator
+    participant PS as PaymentService
+    participant PFS as PrintFulfillmentService
+    A->>S: startServer(port)
+    S->>G: fetchArtworks()
+    G->>AG: generateArt()
+    AG-->>G: return artworks
+    G-->>S: return artworks
+    S->>AD: fetchArtworkDetail(id)
+    AD-->>S: return artworkDetail
+    S->>CF: submitPayment(paymentDetails)
+    CF->>PS: processPayment(paymentDetails)
+    PS-->>CF: return paymentConfirmation
+    CF->>PFS: createOrder(orderDetails)
+    PFS-->>CF: return orderConfirmation
+    CF-->>S: return orderConfirmation

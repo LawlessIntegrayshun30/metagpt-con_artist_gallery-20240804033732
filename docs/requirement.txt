@@ -1,0 +1,1 @@
+Develop a dark themed, web based Art Gallery called "ConArtist" with built-in Ai that creates ultra-realistic paintings, displays them in the chic online art gallery so that the public can purchase prints of all of the artwork:  once the user pays for the painting, an order is sent to an online printer and framer to be completed and then shipped to the customer.

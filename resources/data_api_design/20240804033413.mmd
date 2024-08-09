@@ -1,0 +1,39 @@
+
+classDiagram
+    class App {
+        -Express app
+        +startServer(port: number)
+    }
+    class Server {
+        -Router router
+        +initRoutes()
+    }
+    class Gallery {
+        -Artworks[] artworks
+        +fetchArtworks()
+        +displayArtworks()
+    }
+    class ArtworkDetail {
+        -Artwork artwork
+        +fetchArtworkDetail(id: string)
+        +displayArtworkDetail()
+    }
+    class CheckoutForm {
+        +submitPayment(paymentDetails: object)
+        +confirmOrder(orderDetails: object)
+    }
+    class ArtGenerator {
+        +generateArt()
+    }
+    class PaymentService {
+        +processPayment(paymentDetails: object)
+    }
+    class PrintFulfillmentService {
+        +createOrder(orderDetails: object)
+    }
+    App --> Server
+    Server --> Gallery
+    Gallery --> ArtworkDetail
+    ArtworkDetail --> CheckoutForm
+    CheckoutForm --> PaymentService
+    PaymentService --> PrintFulfillmentService
