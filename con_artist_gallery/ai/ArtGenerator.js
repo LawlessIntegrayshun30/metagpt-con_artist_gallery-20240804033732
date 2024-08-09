@@ -13,7 +13,7 @@ class ArtGenerator:
     def _build_model(self):
         model = Sequential()
 
-        # Encoder
+        Encoder
         model.add(Conv2D(32, (3, 3), activation='relu', padding='same', input_shape=self.input_shape))
         model.add(MaxPooling2D((2, 2), padding='same'))
         model.add(Conv2D(64, (3, 3), activation='relu', padding='same'))
@@ -21,7 +21,7 @@ class ArtGenerator:
         model.add(Conv2D(128, (3, 3), activation='relu', padding='same'))
         model.add(MaxPooling2D((2, 2), padding='same'))
 
-        # Decoder
+        Decoder
         model.add(Conv2D(128, (3, 3), activation='relu', padding='same'))
         model.add(UpSampling2D((2, 2)))
         model.add(Conv2D(64, (3, 3), activation='relu', padding='same'))
@@ -42,6 +42,6 @@ class ArtGenerator:
         return generated_art
 
 # Example usage:
-# art_generator = ArtGenerator()
-# generated_art = art_generator.generate_art()
-# This generated_art can now be saved or processed further for display.
+art_generator = ArtGenerator()
+generated_art = art_generator.generate_art()
+This generated_art can now be saved or processed further for display.
